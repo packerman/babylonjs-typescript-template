@@ -1,5 +1,9 @@
 # babylonjs-typescript-template
 
+1. [Babylon.js](https://www.babylonjs.com/)
+1. [TypeScript](https://www.typescriptlang.org/)
+1. [webpack](https://webpack.js.org/)
+
 # Basic setup
 
 [See also](https://doc.babylonjs.com/features/npm_support)
@@ -23,14 +27,11 @@ npm install --save babylonjs
              "dom",
              "es2015.promise",
              "es5"
-        ]
-        .....,
+        ],
         "types": [
             "babylonjs"
         ],
-        ...
-    },
-    ...
+    }
 }
 ```
 
