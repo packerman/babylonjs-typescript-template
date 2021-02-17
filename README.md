@@ -31,6 +31,11 @@ npm install --save babylonjs
         "types": [
             "babylonjs"
         ],
+        "outDir": "./dist",
+        "noImplicitAny": true,
+        "target": "es5",
+        "checkJs": false,
+        "allowJs": true
     }
 }
 ```
@@ -91,8 +96,10 @@ npm install --save-dev ts-loader
 
 # Add webpack-dev-server
 
-See [webpack-dev-server site](https://webpack.js.org/configuration/dev-server/)
-and [github](https://github.com/webpack/webpack-dev-server)
+    * See [webpack-dev-server site](https://webpack.js.org/configuration/dev-server/)
+    * and [github](https://github.com/webpack/webpack-dev-server)
+    * Set contentBase https://webpack.js.org/configuration/dev-server/#devservercontentbase
+    * Set publicPath https://webpack.js.org/configuration/dev-server/#devserverpublicpath-
 
 ## Run
 
@@ -117,10 +124,24 @@ devServer: {
   }
 ```
 
-# Add tslint
+## Install ESLint
 
-```
-npm install tslint --save-dev
-npx tslint --init
+ * npm install --save-dev eslint @typescript-eslint/parser @typescript-eslint/eslint-plugin
+ * See https://github.com/typescript-eslint/typescript-eslint/blob/master/docs/getting-started/linting/README.md for configuration instruction
+ * Set additional rules, like
+    ```json
+    rules: {
+      "semi": ["error", "always"]
+    },
+    ```
+
+## Notes
+
+### For MacOS
+
+If error
+```sh
+gyp: No Xcode or CLT version detected!
 ```
 
+occurs see https://github.com/nodejs/node-gyp/blob/master/macOS_Catalina.md
