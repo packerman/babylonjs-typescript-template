@@ -1,6 +1,6 @@
-import { ArcRotateCamera, Engine, HemisphericLight, Mesh, MeshBuilder, Scene, Vector3 } from "babylonjs";
+import { ArcRotateCamera, Engine, HemisphericLight, MeshBuilder, Scene, Vector3 } from "babylonjs";
 
-const canvas: any = document.getElementById("renderCanvas");
+const canvas = document.getElementById("renderCanvas") as HTMLCanvasElement;
 const engine: Engine = new Engine(canvas, true);
 
 function createScene(): Scene {
@@ -10,14 +10,14 @@ function createScene(): Scene {
                                                         Vector3.Zero(), createdScene);
     camera.attachControl(canvas, true);
 
-    const light1: HemisphericLight = new HemisphericLight("light1", new Vector3(1, 1, 0), createdScene);
+    new HemisphericLight("light1", new Vector3(1, 1, 0), createdScene);
 
-    const sphere: Mesh = MeshBuilder.CreateSphere("sphere", { diameter: 1 }, createdScene);
+    MeshBuilder.CreateSphere("sphere", { diameter: 1 }, createdScene);
 
     return createdScene;
 }
 
-const scene: Scene = createScene();
+const scene = createScene();
 
 engine.runRenderLoop(() => {
     scene.render();
