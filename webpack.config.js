@@ -10,14 +10,15 @@ module.exports = {
     },
     devServer: {
         port: 8080,
-        publicPath: '/dist/'
+        devMiddleware: {
+            publicPath: '/dist/',
+        },
     },
     resolve: {
         extensions: ['.ts', '.tsx', '.js']
     },
     devtool: 'source-map',
     plugins: [
-
     ],
     module: {
         rules: [{
